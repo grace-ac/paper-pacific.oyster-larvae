@@ -1,1 +1,1 @@
-Directory containing markdown protocols from the 2015 DIA Oysterseed project. 
+Directory containing protocols used in the 2015 DIA Oysterseed project to anaylize the raw proteomic files. 

@@ -1,3 +1,7 @@
+Part 1 of a series in the directory [paper-pacific.oyster-larvae/tree/master/protocols](https://github.com/grace-ac/paper-pacific.oyster-larvae/tree/master/protocols). 
+
+This protocol outlines the method of using chromatograms to view DIA mass spectrometry results. 
+
 # DIA analysis
 Performed on Woodpecker in FTR 209, Roberts' Lab. 
 

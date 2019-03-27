@@ -1,6 +1,6 @@
 Part 1 of a series in the directory [paper-pacific.oyster-larvae/tree/master/protocols](https://github.com/grace-ac/paper-pacific.oyster-larvae/tree/master/protocols). 
 
-This protocol outlines a method of creating chromatogram libraries for use in viewing DIA mass spectrometry results. 
+This protocol outlines the method of creating chromatogram libraries from raw data for data visualization purposes. 
 
 # DIA analysis
 Performed on Woodpecker in FTR 209, Roberts' Lab. 

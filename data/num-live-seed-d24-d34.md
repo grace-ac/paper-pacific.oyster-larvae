@@ -1,4 +1,5 @@
-Number of live seed holding on screen size           
+Number and size of oysters at Day 24 and Day 34 for 23C and 29C treatments.         
+All silos held at 29C were combined (silos 1-6, and 8). Only one silo was the control 23C (silo 9).      
 Day 34 is end of the experiment. Only proteomic data for day 24 (and day 28)
 
 | Day | Treatment | 315um screen | 450um screen | 710um screen | 1000um screen | 1320um screen | 1600um screen | 2000um screen | 2380um screen | 3000um screen | 4000um screen | Weighted average screen size (um) | Total # of live seed |

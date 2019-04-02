@@ -16,6 +16,3 @@ skyout_new$Protein_Name <- gsub(".m.*", "", skyout_new$Protein_Name)
 three <- subset(skyout_new, skyout_new$Condition == "23C")
 nine <- subset(skyout_new, skyout_new$Condition == "29C")
 
-install.packages("VennDiagram")
-library(VennDiagram)
-?venn.plot

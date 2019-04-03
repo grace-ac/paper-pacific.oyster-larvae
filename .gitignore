@@ -1,3 +1,12 @@
 
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
 .DS_Store
-.DS_Store
+
+analyses/0401-blastp/GO-GOslim.sorted
+analyses/0401-blastp/uniprot-SP-GO.sorted
+paper-pacific.oyster-larvae/
+data/20190403-MSstats-report.csv

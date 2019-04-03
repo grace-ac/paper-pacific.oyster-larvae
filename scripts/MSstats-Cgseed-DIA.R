@@ -34,7 +34,7 @@ PeakAreas <- SkylinetoMSstatsFormat(rawPeakAreas)
 
 head(PeakAreas)
 
-# Process data
+#### Process data ============================================================
 QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
                          summaryMethod="TMP",
                          cutoffCensored="minFeature", censoredInt="0",

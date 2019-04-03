@@ -1,4 +1,4 @@
-#=========================================
+#===============================================================================
 #Script for MS Stats using Skyline MS Stats report
 
 library(MSstats)
@@ -7,8 +7,10 @@ library(MSstats)
 #Yaamini's MSStats script: https://github.com/RobertsLab/project-oyster-oa/blob/master/analyses/DNR_Skyline_20170524/2017-06-22-MSstats/2017-06-22-MSstats.R
 
 #MSstats manual (starting p44):http://msstats.org/wp-content/uploads/2017/01/MSstats_v3.7.3_manual.pdf
+#===============================================================================
 
-####==IMPORT AND PROCESS DATA================================================
+########==IMPORT AND PROCESS DATA===============================================
+
 #read in .csv (locally. zip is in github)
 rawPeakAreas <- read.csv("data/20190403-MSstats-report.csv")
 
@@ -74,6 +76,8 @@ QuantData <- dataProcess(PeakAreas)
 
 #After it's all done, check what the ProcessedData looks like
 head(QuantData$ProcessedData)
+#large List (5 elements, 101.4 Mb)
+#===============================================================================
 
 # Create dataprocess plots
 dataProcessPlots(data = QuantData, type = "ProfilePlot")

@@ -90,6 +90,13 @@ dataProcessPlots(data = QuantData, type = "ProfilePlot")
 #5: Removed 99 rows containing missing values (geom_path).
 
 dataProcessPlots(data = QuantData, type = "QCPlot")
+#There were 50 or more warnings (use warnings() to see the first 50)
+#Warning messages: (I am showing first 5)
+#1: Removed 541076 rows containing non-finite values (stat_boxplot).
+#2: Removed 780 rows containing non-finite values (stat_boxplot).
+#3: Removed 744 rows containing non-finite values (stat_boxplot).
+#4: Removed 436 rows containing non-finite values (stat_boxplot).
+#5: Removed 252 rows containing non-finite values (stat_boxplot).
 
 # CREATE CONTRAST MATRIX
 

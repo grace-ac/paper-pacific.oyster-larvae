@@ -97,8 +97,12 @@ Adding conditon (23C or 29C)
 ![img](../images/skyline-images/36-add-23c-29c.PNG)
 
 Set bioreplicates:    
-![img](../images/skyline-images/39-new-biorep.PNG)
+![img](../images/skyline-images/40-condition-and-newbioreps.PNG)
 
-### Step 5.4 Export and save report
-![img](../images/skyline-images/30-save-report.PNG)
+### Step 5.4 Export and save reports        
+Export built-in MS stats report format (for protocol 3: [MS Stats](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/protocols/03-MSStats-protocol.md))      
+![img](../images/skyline-images/38-export-new-msstats-report.PNG)     
+
+Export a custom report to do own analyses           
+![img](../images/skyline-images/39-export-0403-report.PNG)
 

@@ -113,11 +113,15 @@ write.csv(proteinComparisonResults, "analyses/20190403-2015Cgseed-protcomp.csv",
 
 # GROUP COMPARISON PLOTS
 groupComparisonPlots(data = proteinComparisonResults, type = "VolcanoPlot") #Volcano plot, alpha = 0.05.
-#null device 
-#1 
-#There were 17 warnings (use warnings() to see them)
+#The volcano plot for 23C-29C does not show the protein names because none of them is significant. 
 groupComparisonPlots(data = proteinComparisonResults, type = "ComparisonPlot") #Comparison plot, alpha = 0.05
-#output for Comparison PLot warning:
 #null device 
-#1 
-#There were 17 warnings (use warnings() to see them)
+#         1 
+#There were 18 warnings (use warnings() to see them)
+#Warning messages: (I show first 5)
+#1: Removed 1 rows containing missing values (geom_hline).
+#2: Removed 1 rows containing missing values (geom_hline).
+#3: Removed 1 rows containing missing values (geom_hline).
+#4: Removed 1 rows containing missing values (geom_hline).
+#5: Removed 1 rows containing missing values (geom_hline).
+

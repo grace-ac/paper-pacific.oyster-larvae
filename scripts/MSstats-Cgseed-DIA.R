@@ -81,6 +81,14 @@ head(QuantData$ProcessedData)
 
 # Create dataprocess plots
 dataProcessPlots(data = QuantData, type = "ProfilePlot")
+#There were 50 or more warnings (use warnings() to see the first 50)
+#Warning messages: (I am showing first 5)
+#1: Removed 195 rows containing missing values (geom_path).
+#2: Removed 780 rows containing missing values (geom_point).
+#3: Removed 186 rows containing missing values (geom_path).
+#4: Removed 744 rows containing missing values (geom_point).
+#5: Removed 99 rows containing missing values (geom_path).
+
 dataProcessPlots(data = QuantData, type = "QCPlot")
 
 # CREATE CONTRAST MATRIX

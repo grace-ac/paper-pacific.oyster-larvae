@@ -12,3 +12,4 @@ diffexup <- subset.data.frame(data, log2FC > 3.00, select = c(Protein, Label, lo
 diffexlow <- subset.data.frame(data, log2FC < -3.00, select = c(Protein, Label, log2FC, SE))
 
 #combine the two into one table
+diffex <- rbind(diffexlow, diffexup)

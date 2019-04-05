@@ -15,3 +15,4 @@ diffexlow <- subset.data.frame(data, log2FC < -3.00, select = c(Protein, Label, 
 diffex <- rbind(diffexlow, diffexup)
 
 write.csv(diffex, "analyses/proteins_diff_expressed.csv")
+write.table(diffex, "analyses/proteins_diff_expressed.table")

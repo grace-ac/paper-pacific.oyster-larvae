@@ -2,6 +2,9 @@ Part 2 of the protocol series in directory [paper-pacific.oyster-larvae/tree/mas
 
 This protocol outlines the method of using Skyline Daily to view chromatogram DIA mass spectrometry results and exporting them for use in MS Stats for analysis. 
 
+### Skyline Daily Version Used in this process:     
+![img](../images/skyline-images/SkyDversion.PNG)
+
 # Continuation from [01-EncyclopeDIA-protocol.md](https://github.com/RobertsLab/project-pacific.oyster-larvae/blob/master/DIA_2015/protocol/01-EncyclopeDIA-protocol.md)
 
 ## Step 4: Use Skyline Daily to set filters and export data

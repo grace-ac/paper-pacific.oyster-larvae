@@ -15,3 +15,8 @@ diffexlow <- subset.data.frame(data, log2FC < -3.00, select = c(Protein, Label, 
 diffex <- rbind(diffexlow, diffexup)
 
 write.csv(diffex, "analyses/proteins_diff_expressed.csv")
+
+#### Re-do using the annotated protein list 
+data_annot <- read.csv("analyses/Cgseed-protcomp-annotation.tab", sep = '\t', header = F)
+
+#add column names

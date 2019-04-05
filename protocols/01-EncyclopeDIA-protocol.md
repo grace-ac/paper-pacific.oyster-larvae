@@ -8,6 +8,8 @@ Performed on Woodpecker in FTR 209, Roberts' Lab.
 Modified from a DIA Analysis from MacCoss lab:      
 [data-analysis](https://docs.google.com/document/d/1Vr3wE7Z8eJVenUWgbxJ3CmXxCoNiba_HYQXh7sNce_k/edit)
 
+[EncyclopeDIA manual](https://bitbucket.org/searleb/encyclopedia/downloads/EncyclopeDIA%20manual.pdf)
+
 ### You will need:
 - MSConvert (_Windows only!_)    
 [http://proteowizard.sourceforge.net/download.html](http://proteowizard.sourceforge.net/download.html)

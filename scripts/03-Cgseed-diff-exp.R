@@ -3,9 +3,6 @@
 #read in annotated protein list that were detected in MSstats
 data <- read.csv("analyses/Cgseed-protcomp-annotation-name.sorted", sep = '\t', header = F)
 
-#add column names
-
-
 library(dplyr)
 library(tidyr)
 
@@ -17,4 +14,7 @@ diffexlow <- subset.data.frame(data, V3 < -2.00)
 #combine the two into one table
 diffex <- rbind(diffexlow, diffexup)
 
+#add column names
+#colnames(diffex) <- c("Protein", "Label", "log2FC", )
+  
 write.csv(diffex, "analyses/proteins_comp_annot_threshold.csv")

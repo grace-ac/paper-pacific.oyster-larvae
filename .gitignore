@@ -14,3 +14,5 @@ msstats-1.log
 msstats.log
 sessionInfo.txt
 .RDataTmp
+analyses/0409/uniprot-SP-GO.sorted
+analyses/0409/_MSout-sep.tab

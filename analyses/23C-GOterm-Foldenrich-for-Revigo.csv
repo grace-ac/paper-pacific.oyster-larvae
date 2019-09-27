@@ -1,5 +1,5 @@
-"","Term","Fold.Enrichment"
-"1","GO:0044712~single-organism catabolic process",6.6873755475906
-"2","GO:0044419~interspecies interaction between organisms",5.60855043420174
-"3","GO:0044403~symbiosis, encompassing mutualism through parasitism",5.60855043420174
-"4","GO:1901136~carbohydrate derivative catabolic process",20.5030525030525
+Term,Fold.Enrichment
+GO:0044712~single-organism catabolic process,6.6873755475906
+GO:0044419~interspecies interaction between organisms,5.60855043420174
+GO:0044403~symbiosis, encompassing mutualism through parasitism,5.60855043420174
+GO:1901136~carbohydrate derivative catabolic process,20.5030525030525

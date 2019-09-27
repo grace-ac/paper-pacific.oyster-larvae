@@ -1,8 +1,8 @@
-"","Term","Fold.Enrichment"
-"1","GO:0055123~digestive system development",14.375
-"2","GO:0035295~tube development",4.5771144278607
-"3","GO:0048568~embryonic organ development",7.66666666666667
-"4","GO:0007389~pattern specification process",6.21621621621622
-"5","GO:0045428~regulation of nitric oxide biosynthetic process",19.1666666666667
-"6","GO:0006809~nitric oxide biosynthetic process",19.1666666666667
-"7","GO:0009791~post-embryonic development",5.34883720930233
+Term,Fold.Enrichment
+GO:0055123~digestive system development,14.375
+GO:0035295~tube development,4.5771144278607
+GO:0048568~embryonic organ development,7.66666666666667
+GO:0007389~pattern specification process,6.21621621621622
+GO:0045428~regulation of nitric oxide biosynthetic process,19.1666666666667
+GO:0006809~nitric oxide biosynthetic process,19.1666666666667
+GO:0009791~post-embryonic development,5.34883720930233

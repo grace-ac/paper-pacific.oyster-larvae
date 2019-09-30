@@ -1,0 +1,109 @@
+term_ID,description,frequency,plot_X,plot_Y,plot_size,value,uniqueness,dispensability,representative,eliminated
+GO:0006888,ER to Golgi vesicle-mediated transport,0.13%,-3.402,-5.487,4.204,2.2073,0.937,0,6888,0
+GO:0046907,intracellular transport,1.56%,null,null,5.302,1.3533,0.939,0.741,6888,1
+GO:0034613,cellular protein localization,1.55%,null,null,5.297,1.2923,0.931,0.916,6888,1
+GO:0048193,Golgi vesicle transport,0.30%,null,null,4.581,1.8048,0.952,0.716,6888,1
+GO:0009081,branched-chain amino acid metabolic process,0.46%,-4.784,5.628,4.774,4.8912,0.51,0,9081,0
+GO:0009056,catabolic process,4.82%,5.037,1.311,5.791,1.4721,0.949,0.017,9056,0
+GO:0006457,protein folding,0.90%,4.376,-0.017,5.064,2.5948,0.925,0.032,6457,0
+GO:0043623,cellular protein complex assembly,0.67%,0.348,-4.445,4.936,1.6258,0.858,0.034,43623,0
+GO:0071822,protein complex subunit organization,1.29%,null,null,5.218,1.3485,0.859,0.781,43623,1
+GO:0034622,cellular macromolecular complex assembly,1.21%,null,null,5.191,1.4044,0.853,0.879,43623,1
+GO:0006461,protein complex assembly,0.96%,null,null,5.091,1.3949,0.854,0.953,43623,1
+GO:0065003,macromolecular complex assembly,1.50%,null,null,5.283,1.3332,0.854,0.854,43623,1
+GO:0043094,cellular metabolic compound salvage,0.31%,1.734,-1.107,4.605,3.154,0.859,0.053,43094,0
+GO:0006091,generation of precursor metabolites and energy,1.94%,3.765,-1.736,5.396,2.0989,0.87,0.064,6091,0
+GO:0006790,sulfur compound metabolic process,1.82%,5.381,3.261,5.369,1.7589,0.87,0.075,6790,0
+GO:0051186,cofactor metabolic process,3.99%,2.289,-3.214,5.709,1.9546,0.86,0.083,51186,0
+GO:0008380,RNA splicing,0.41%,2.529,6.47,4.725,1.556,0.781,0.107,8380,0
+GO:1901564,organonitrogen compound metabolic process,17.89%,1.16,7.22,6.361,1.4741,0.773,0.164,1901564,0
+GO:0045454,cell redox homeostasis,0.86%,-3.913,-0.645,5.043,2.8549,0.717,0.185,45454,0
+GO:0055114,oxidation-reduction process,15.06%,-7.879,2.104,6.286,1.8674,0.651,0.216,55114,0
+GO:0006749,glutathione metabolic process,0.15%,-0.227,8.634,4.288,2.7499,0.764,0.238,6749,0
+GO:0044710,single-organism metabolic process,31.68%,-7.02,-2.131,6.609,1.3504,0.773,0.268,44710,0
+GO:0045184,establishment of protein localization,2.41%,-2.763,-5.411,5.49,1.2549,0.948,0.273,45184,0
+GO:0006144,purine nucleobase metabolic process,0.20%,-4.142,6.097,4.416,3.8431,0.473,0.277,6144,0
+GO:0072524,pyridine-containing compound metabolic process,1.35%,-0.933,7.94,5.239,2.3985,0.702,0.292,72524,0
+GO:0033539,fatty acid beta-oxidation using acyl-CoA dehydrogenase,0.01%,-3.979,2.105,3.073,4.7825,0.531,0.302,33539,0
+GO:0044242,cellular lipid catabolic process,0.18%,null,null,4.363,2.066,0.584,0.704,33539,1
+GO:0006635,fatty acid beta-oxidation,0.08%,null,null,4.011,3.35,0.464,0.859,33539,1
+GO:0009062,fatty acid catabolic process,0.11%,null,null,4.153,2.9275,0.466,0.905,33539,1
+GO:0019395,fatty acid oxidation,0.09%,null,null,4.041,2.8071,0.538,0.993,33539,1
+GO:0006575,cellular modified amino acid metabolic process,0.79%,-1.118,8.912,5.003,2.1195,0.738,0.309,6575,0
+GO:0072521,purine-containing compound metabolic process,2.67%,-1.433,8.118,5.535,1.6287,0.681,0.357,72521,0
+GO:0055086,nucleobase-containing small molecule metabolic process,4.92%,-4.809,3.855,5.8,1.7185,0.463,0.382,55086,0
+GO:0006099,tricarboxylic acid cycle,0.47%,-7.125,3.929,4.78,3.154,0.51,0.412,6099,0
+GO:0009060,aerobic respiration,0.62%,null,null,4.899,2.6902,0.669,0.876,6099,1
+GO:0045333,cellular respiration,0.98%,null,null,5.101,2.3699,0.655,0.905,6099,1
+GO:0015980,energy derivation by oxidation of organic compounds,1.18%,null,null,5.178,1.9157,0.653,0.789,6099,1
+GO:0044281,small molecule metabolic process,15.14%,-7.54,1.679,6.288,1.7286,0.65,0.415,44281,0
+GO:0043648,dicarboxylic acid metabolic process,1.02%,-6.724,3.626,5.116,3.0264,0.506,0.445,43648,0
+GO:0030258,lipid modification,0.38%,-6.407,-0.121,4.685,1.8769,0.672,0.472,30258,0
+GO:0009112,nucleobase metabolic process,0.48%,-3.904,5.556,4.791,3.1649,0.446,0.497,9112,0
+GO:0006090,pyruvate metabolic process,0.82%,-6.768,4.04,5.021,2.4832,0.496,0.511,6090,0
+GO:0006631,fatty acid metabolic process,0.88%,null,null,5.052,1.7701,0.475,0.755,6090,1
+GO:0032787,monocarboxylic acid metabolic process,2.49%,-6.438,3.217,5.504,1.8815,0.463,0.534,32787,0
+GO:0009066,aspartate family amino acid metabolic process,0.83%,-4.453,5.153,5.026,3.1649,0.48,0.536,9066,0
+GO:0009068,aspartate family amino acid catabolic process,0.07%,-2.969,5.023,3.964,3.7662,0.486,0.559,9068,0
+GO:0009067,aspartate family amino acid biosynthetic process,0.72%,null,null,4.963,3.1883,0.463,0.781,9068,1
+GO:0009168,purine ribonucleoside monophosphate biosynthetic process,1.04%,-4.289,3.69,5.127,3.0351,0.374,0.579,9168,0
+GO:0009205,purine ribonucleoside triphosphate metabolic process,1.37%,null,null,5.244,2.2309,0.379,0.971,9168,1
+GO:0006165,nucleoside diphosphate phosphorylation,0.60%,null,null,4.886,2.6374,0.411,0.956,9168,1
+GO:0046496,nicotinamide nucleotide metabolic process,1.14%,null,null,5.164,2.3913,0.369,0.738,9168,1
+GO:0009117,nucleotide metabolic process,4.17%,null,null,5.728,1.6464,0.323,0.877,9168,1
+GO:0009124,nucleoside monophosphate biosynthetic process,1.49%,null,null,5.28,2.6394,0.359,0.833,9168,1
+GO:0009123,nucleoside monophosphate metabolic process,2.37%,null,null,5.482,2.3993,0.357,0.731,9168,1
+GO:0009126,purine nucleoside monophosphate metabolic process,1.92%,null,null,5.391,2.5053,0.356,0.924,9168,1
+GO:0009127,purine nucleoside monophosphate biosynthetic process,1.04%,null,null,5.127,3.0351,0.374,0.909,9168,1
+GO:0009135,purine nucleoside diphosphate metabolic process,0.60%,null,null,4.885,2.5826,0.411,0.963,9168,1
+GO:0009144,purine nucleoside triphosphate metabolic process,1.40%,null,null,5.255,2.1521,0.378,0.957,9168,1
+GO:0009141,nucleoside triphosphate metabolic process,1.61%,null,null,5.314,2.1594,0.379,0.771,9168,1
+GO:0009156,ribonucleoside monophosphate biosynthetic process,1.39%,null,null,5.253,2.8619,0.36,0.939,9168,1
+GO:0009161,ribonucleoside monophosphate metabolic process,2.27%,null,null,5.464,2.4773,0.346,0.944,9168,1
+GO:0006732,coenzyme metabolic process,3.11%,null,null,5.601,1.9991,0.827,0.779,9168,1
+GO:0006733,oxidoreduction coenzyme metabolic process,1.27%,null,null,5.213,2.1858,0.838,0.79,9168,1
+GO:0009167,purine ribonucleoside monophosphate metabolic process,1.92%,null,null,5.39,2.5053,0.354,0.911,9168,1
+GO:0009179,purine ribonucleoside diphosphate metabolic process,0.60%,null,null,4.885,2.5826,0.411,0.987,9168,1
+GO:0009185,ribonucleoside diphosphate metabolic process,0.60%,null,null,4.885,2.5319,0.411,0.963,9168,1
+GO:0006753,nucleoside phosphate metabolic process,4.21%,null,null,5.732,1.6476,0.333,0.903,9168,1
+GO:0046034,ATP metabolic process,1.26%,null,null,5.21,2.3913,0.331,0.932,9168,1
+GO:0046031,ADP metabolic process,0.55%,null,null,4.852,2.7499,0.364,0.795,9168,1
+GO:0019362,pyridine nucleotide metabolic process,1.14%,null,null,5.164,2.3913,0.369,0.962,9168,1
+GO:0009199,ribonucleoside triphosphate metabolic process,1.46%,null,null,5.272,2.2204,0.376,0.946,9168,1
+GO:0006082,organic acid metabolic process,9.09%,-6.092,2.605,6.067,2.0977,0.437,0.592,6082,0
+GO:0044283,small molecule biosynthetic process,5.68%,-6.114,3.044,5.862,1.6861,0.463,0.608,44283,0
+GO:0044282,small molecule catabolic process,1.27%,-5.341,3.663,5.213,2.7242,0.456,0.618,44282,0
+GO:0072329,monocarboxylic acid catabolic process,0.29%,null,null,4.571,2.9025,0.451,0.879,44282,1
+GO:0044724,single-organism carbohydrate catabolic process,0.78%,null,null,5.001,2.2763,0.61,0.779,44282,1
+GO:0044712,single-organism catabolic process,2.52%,null,null,5.51,1.9538,0.592,0.718,44282,1
+GO:0016054,organic acid catabolic process,0.95%,null,null,5.084,2.799,0.414,0.924,44282,1
+GO:0046395,carboxylic acid catabolic process,0.95%,null,null,5.084,2.8648,0.408,0.795,44282,1
+GO:0044248,cellular catabolic process,3.27%,null,null,5.622,1.4799,0.698,0.813,44282,1
+GO:0009063,cellular amino acid catabolic process,0.65%,null,null,4.92,3.119,0.405,0.952,44282,1
+GO:1901575,organic substance catabolic process,4.61%,null,null,5.772,1.4559,0.718,0.888,44282,1
+GO:1901606,alpha-amino acid catabolic process,0.57%,null,null,4.863,3.1599,0.407,0.939,44282,1
+GO:0070271,protein complex biogenesis,0.96%,0.106,-4.551,5.092,1.3949,0.925,0.622,70271,0
+GO:0009132,nucleoside diphosphate metabolic process,0.70%,-5.417,4.859,4.952,2.4004,0.422,0.637,9132,0
+GO:0046939,nucleotide phosphorylation,0.79%,-5.527,5.039,5.007,2.4542,0.415,0.646,46939,0
+GO:0016052,carbohydrate catabolic process,1.08%,3.463,4.024,5.141,2.0894,0.741,0.649,16052,0
+GO:0042455,ribonucleoside biosynthetic process,1.42%,-3.779,4.522,5.26,2.5621,0.346,0.65,42455,0
+GO:0046128,purine ribonucleoside metabolic process,2.00%,null,null,5.408,2.1645,0.336,0.878,42455,1
+GO:0046129,purine ribonucleoside biosynthetic process,0.92%,null,null,5.073,2.5319,0.366,0.936,42455,1
+GO:0042278,purine nucleoside metabolic process,2.01%,null,null,5.41,2.1399,0.339,0.904,42455,1
+GO:0009116,nucleoside metabolic process,2.92%,null,null,5.573,2.1573,0.32,0.947,42455,1
+GO:0009119,ribonucleoside metabolic process,2.52%,null,null,5.51,2.175,0.328,0.904,42455,1
+GO:0009163,nucleoside biosynthetic process,1.44%,null,null,5.265,2.4528,0.347,0.979,42455,1
+GO:0042451,purine nucleoside biosynthetic process,0.92%,null,null,5.073,2.5319,0.366,0.936,42455,1
+GO:1901659,glycosyl compound biosynthetic process,1.47%,null,null,5.274,2.3492,0.571,0.806,42455,1
+GO:0008652,cellular amino acid biosynthetic process,2.93%,-4.042,4.307,5.575,2.9891,0.4,0.654,8652,0
+GO:0016053,organic acid biosynthetic process,4.17%,null,null,5.728,1.9939,0.412,0.807,8652,1
+GO:0046394,carboxylic acid biosynthetic process,4.16%,null,null,5.727,1.9965,0.407,0.908,8652,1
+GO:1901607,alpha-amino acid biosynthetic process,2.56%,null,null,5.516,2.6902,0.403,0.847,8652,1
+GO:1901605,alpha-amino acid metabolic process,3.63%,null,null,5.668,2.5522,0.41,0.795,8652,1
+GO:1901565,organonitrogen compound catabolic process,1.20%,-0.274,6.615,5.186,2.0364,0.616,0.657,1901565,0
+GO:1901657,glycosyl compound metabolic process,2.96%,-8.513,1.417,5.58,2.1472,0.619,0.665,1901657,0
+GO:0019693,ribose phosphate metabolic process,3.03%,null,null,5.59,1.5896,0.542,0.738,1901657,1
+GO:0034440,lipid oxidation,0.09%,-6.715,-0.644,4.045,2.7649,0.687,0.68,34440,0
+GO:0006520,cellular amino acid metabolic process,5.59%,-4.446,4.539,5.856,2.3571,0.396,0.69,6520,0
+GO:0043436,oxoacid metabolic process,9.01%,null,null,6.063,2.1062,0.388,0.902,6520,1
+GO:0019752,carboxylic acid metabolic process,8.83%,null,null,6.054,2.0999,0.389,0.825,6520,1

@@ -26,5 +26,5 @@ blast_SP_GO <- left_join(blastout, uniprot_SP, by = "uniprot_acc")
 prot_annot <- left_join(prot, blast_SP_GO, by = "uniprot_acc")
 #THERE ARE DUPLICATE PROTEINS ---> NEED TO FIGURE OUT HOW TO FIX THAT
 
-write.table(prot_annot, "analyses/diffexp-prot-annotated.tab", sep = '\t', row.names = FALSE, quote = FALSE)
-write.csv(prot_annot, "analyses/diffexp-prot-annotated.csv", row.names = FALSE, quote = FALSE)
+write.table(prot_annot, "analyses/diff_abundant-prot-annotated.tab", sep = '\t', row.names = FALSE, quote = FALSE)
+write.csv(prot_annot, "analyses/diff_abundant-prot-annotated.csv", row.names = FALSE, quote = FALSE)

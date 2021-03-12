@@ -1,6 +1,8 @@
 # paper-pacific.oyster-larvae
 ## Repository for the RobertsLab/project-pacific.oyster-larvae 2015 DIA oyster seed project paper
 
+[![DOI](https://zenodo.org/badge/177673604.svg)](https://zenodo.org/badge/latestdoi/177673604)
+
 ### Repository contents: 
 
 [analyses](https://github.com/grace-ac/paper-pacific.oyster-larvae/tree/master/analyses)    
@@ -8,7 +10,7 @@ contains figures and tables from MS Stats, DAVID, Revigo, etc. used both in the 
 
 [data](https://github.com/grace-ac/paper-pacific.oyster-larvae/tree/master/data)    
 contains data files that are results from analyses, as well as the _C. gigas_ proteome used as the background   
-RAW spectral data is **not** included in this repository, but can be found published here: _____
+RAW spectral data is **not** included in this repository, but can be found published: [here](http://owl.fish.washington.edu/phainopepla/C_gigas/2015-12-30/)
 
 [images](https://github.com/grace-ac/paper-pacific.oyster-larvae/tree/master/images)    
 contatins screenshots of EncyclopeDIA and SkylineDaily, used in creating their respective [protocols](https://github.com/grace-ac/paper-pacific.oyster-larvae/tree/master/protocols)

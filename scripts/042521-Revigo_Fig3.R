@@ -52,11 +52,11 @@ head(one.data);
 
 p1 <- ggplot( data = one.data );
 p1 <- p1 + geom_point( aes( plot_X, plot_Y, colour = temperature_trtmnt, size = fold_enrichment), alpha = I(1) ) + scale_size_area();
-p1 <- p1 +  scale_color_gradientn( colors = c("green", "yellow"));
+p1 <- p1 +  scale_color_gradientn( colors = c("plum3", "lightsalmon1"));
 p1 <- p1 + geom_point( aes(plot_X, plot_Y, size = fold_enrichment), shape = 21, fill = "transparent", colour = I (alpha ("black", 0.6) )) + scale_size_area();
-p1 <- p1 + scale_size( range=c(5, 30)) + theme_classic();  + scale_fill_gradientn(colours = c("blue", "yellow"), limits = c(-300, 23) );
+p1 <- p1 + scale_size( range=c(5, 30)) + theme_classic();  + scale_fill_gradientn(colours = c("plum3", "lightsalmon1"), limits = c(-300, 23) );
 ex <- one.data [ one.data$dispensability < 3, ];
-p1 <- p1 + geom_text( data = ex, aes(plot_X, plot_Y, label = description), colour = I(alpha("black", 0.85)), size = 3 ) + theme_classic();
+p1 <- p1 + geom_text( data = ex, aes(plot_X, plot_Y, label = description), colour = I(alpha("black", 0.85)), size = 6 ) + theme_classic();
 p1 <- p1 + labs (y = "semantic space y", x = "semantic space x");
 p1 <- p1 + theme(legend.key = element_blank()) ;
 one.x_range = max(one.data$plot_X) - min(one.data$plot_X);

@@ -1,0 +1,5 @@
+---
+title: "oysterfig2"
+output: html_document
+---
+Rmd to make pie figure of 108 detected proteins GOslim terms or something. 

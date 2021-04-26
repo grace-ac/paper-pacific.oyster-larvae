@@ -14,6 +14,12 @@ library( ggplot2 );
 library( scales );
 
 # --------------------------------------------------------------------------
+
+# 04/26/2021 - install ggrepel to make plot without having overlapping labels:
+# Install ggrepel package if needed
+#install.packages("ggrepel")
+library(ggrepel)
+
 # Here is your data from REVIGO. Scroll down for plot configuration options.
 
 #042521 - add a column that tells which temperature treatment the GO term was most abundant in
@@ -56,7 +62,7 @@ p1 <- p1 +  scale_color_gradientn( colors = c("plum3", "lightsalmon1"));
 p1 <- p1 + geom_point( aes(plot_X, plot_Y, size = fold_enrichment), shape = 21, fill = "transparent", colour = I (alpha ("black", 0.6) )) + scale_size_area();
 p1 <- p1 + scale_size( range=c(5, 30)) + theme_classic();  + scale_fill_gradientn(colours = c("plum3", "lightsalmon1"), limits = c(-300, 23) );
 ex <- one.data [ one.data$dispensability < 3, ];
-p1 <- p1 + geom_text( data = ex, aes(plot_X, plot_Y, label = description), colour = I(alpha("black", 0.85)), size = 6 ) + theme_classic();
+p1 <- p1 + geom_text_repel( data = ex, aes(plot_X, plot_Y, label = description), colour = I(alpha("black", 0.85)), size = 6 ) + theme_classic() ;
 p1 <- p1 + labs (y = "semantic space y", x = "semantic space x");
 p1 <- p1 + theme(legend.key = element_blank()) ;
 one.x_range = max(one.data$plot_X) - min(one.data$plot_X);

@@ -64,7 +64,9 @@ p1 <- p1 + scale_size( range=c(5, 30)) + theme_classic();  + scale_fill_gradient
 ex <- one.data [ one.data$dispensability < 3, ];
 p1 <- p1 + geom_text_repel( data = ex, aes(plot_X, plot_Y, label = description), colour = I(alpha("black", 0.85)), size = 6 ) + theme_classic() ;
 p1 <- p1 + labs (y = "semantic space y", x = "semantic space x");
-p1 <- p1 + theme(legend.key = element_blank()) ;
+p1 <- p1 + guides(color = FALSE) ;
+p1 <- p1 + labs(size = "Fold Enrichment");
+p1 <- p1 + guides(size = guide_legend(override.aes = list(fill = "gray")));
 one.x_range = max(one.data$plot_X) - min(one.data$plot_X);
 one.y_range = max(one.data$plot_Y) - min(one.data$plot_Y);
 p1 <- p1 + xlim(min(one.data$plot_X)-one.x_range/10,max(one.data$plot_X)+one.x_range/10);

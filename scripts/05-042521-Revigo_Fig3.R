@@ -66,6 +66,12 @@ p1 <- p1 + geom_text_repel( data = ex, aes(plot_X, plot_Y, label = description),
 p1 <- p1 + labs (y = "semantic space y", x = "semantic space x");
 p1 <- p1 + guides(color = FALSE) ;
 p1 <- p1 + labs(size = "Fold Enrichment");
+p1 <- p1 + theme(axis.text.x = element_text(size=18));
+p1 <- p1 + theme(axis.text.y = element_text(size=18));
+p1 <- p1 + theme(legend.text = element_text(size=18));
+p1 <- p1 + theme(axis.title.x = element_text(size=18));
+p1 <- p1 + theme(axis.title.y = element_text(size=18));
+p1 <- p1 + theme(legend.title = element_text(size=18));
 p1 <- p1 + guides(size = guide_legend(override.aes = list(fill = "gray")));
 one.x_range = max(one.data$plot_X) - min(one.data$plot_X);
 one.y_range = max(one.data$plot_Y) - min(one.data$plot_Y);

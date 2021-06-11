@@ -4,4 +4,4 @@
 Notebook for taking BLASTp results to GOslim terms
 
 [02-detected-prots-annotate-GOslim.ipynb](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynb)     
-Notebook for annotating MS Stats protein list 
+Notebook for annotating MS Stats protein list (2,808 protein list with thresholds >2.00 and <2.00 log2FC)

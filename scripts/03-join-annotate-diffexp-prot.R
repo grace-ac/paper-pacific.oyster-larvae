@@ -16,6 +16,6 @@ protGOslim <- left_join(prot, blastGO, by = "protein")
 
 #49983 rows instead of 2808. There are multiple GOslim IDs. Just save the biogical process ones ("P" in column "V4")
 
-write.table(protGOslim, "analyses/BLAST-to-GOslim/protGOslim.tab", sep = '\t', row.names = FALSE, quote = FALSE)
+write.table(protGOslim, "analyses/BLAST-to-GOslim/protGOslim.tab", sep = '\t', row.names = FALSE, quote = FALSE, col.names = FALSE)
 
 #Go back to [02-detected-prots-annotate-GOslim.ipynb](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynbhttps://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynb) to reduce rows and get a table for a pie chart (**Fig. 2** in paper)

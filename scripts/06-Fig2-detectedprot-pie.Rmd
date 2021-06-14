@@ -29,5 +29,16 @@ lbls <- paste(lbls, "%", sep = "") #ad % to labels
 pie(slices, labels = lbls, col = piecolors, radius = 0.7)
 ```
 
+```{r}
+pdf("../analyses/Fig2-pie/detectedprots-GOslim-pie.pdf")
+slices <- c(206, 175, 150, 149, 102, 94, 84, 79, 72, 68, 25, 20, 19, 13) #create vector of counts of GOslims based on the file read in above
+lbls <- c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism") #create vector of GOslim terms in the same order as the number of counts
+pct <- round(slices/sum(slices)*100) #get percentages of each GOslim term
+lbls <- paste(lbls, pct) #add percents to labels
+lbls <- paste(lbls, "%", sep = "") #ad % to labels
+pie(slices, labels = lbls, col = piecolors, radius = 0.7)
+```
+
+
 
 

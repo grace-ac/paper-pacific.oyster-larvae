@@ -1,0 +1,33 @@
+---
+title: "oysterfig2"
+output: html_document
+---
+Rmd to make pie figure of detected proteins GOslim terms (**Fig. 2** in paper). 
+
+`ggrepel` to help get GOslim terms to not overlap in final pie
+```{r}
+library(ggrepel)
+```
+
+Read in the GOslim pie table made in notebook [02-detected-prots-annotate-GOslim.ipynb](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynbhttps://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynb)
+```{r}
+piecounts <- read.csv("../analyses/Fig2-pie/GOslim-P-pie-detectedprots.txt", header = FALSE)
+head(piecounts)
+```
+
+Set pie colors:
+```{r}
+piecolors <- rainbow(14)
+```
+
+```{r}
+slices <- c(206, 175, 150, 149, 102, 94, 84, 79, 72, 68, 25, 20, 19, 13) #create vector of counts of GOslims based on the file read in above
+lbls <- c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism") #create vector of GOslim terms in the same order as the number of counts
+pct <- round(slices/sum(slices)*100) #get percentages of each GOslim term
+lbls <- paste(lbls, pct) #add percents to labels
+lbls <- paste(lbls, "%", sep = "") #ad % to labels
+pie(slices, labels = lbls, col = piecolors, radius = 0.7)
+```
+
+
+

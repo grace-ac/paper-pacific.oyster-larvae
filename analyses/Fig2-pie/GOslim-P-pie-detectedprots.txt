@@ -1,0 +1,14 @@
+ 206 other biological processes
+ 175 other metabolic processes
+ 150 cell organization and biogenesis
+ 149 developmental processes
+ 102 transport
+  94 protein metabolism
+  84 RNA metabolism
+  79 signal transduction
+  72 stress response
+  68 cell cycle and proliferation
+  25 death
+  20 cell-cell signaling
+  19 cell adhesion
+  13 DNA metabolism

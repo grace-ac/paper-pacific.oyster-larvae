@@ -1,30 +1,20 @@
 library(dplyr)
 
-#Read in differentially abundant proteins --> 69 proteins; threshold
-prot <- read.table("analyses/0409/_prot-comp-final.tab")
-#rename column "V4" "uniprot_acc"
-colnames(prot) <- c("V1", "V2", "V3", "uniprot_acc", "V5", "V6", "V7")
+#Read in differentially abundant proteins --> 69 proteins; threshold (from jupyter noteboook: [02-detected-prots-annotate-GOslim.ipynb](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynbhttps://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynb))    
+prot <- read.table("analyses/BLAST-to-GOslim/_prot-comp-final.tab")
+#rename column "V4" "uniprot_acc", and "V1" "protein"
+colnames(prot) <- c("protein", "V2", "V3", "uniprot_acc", "V5", "V6", "V7")
 
-#read in the uniprot-SP-GO.sorted file
-uniprot_SP <- read.delim("http://owl.fish.washington.edu/halfshell/bu-alanine-wd/17-07-20/uniprot-SP-GO.sorted", sep = '\t', header = FALSE)
+#Read in the Blastquery-GOslim-proteome.tab:
+blastGO <- read.table("analyses/BLAST-to-GOslim/Blastquery-GOslim-proteome.tab", sep = '\t')
 
-#rename uniprot-SP-GO.sorted column "V1" as uniprot_acc
-colnames(uniprot_SP) <- c("uniprot_acc", "V2","V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12")
+#rename column "V1" "protein"
+colnames(blastGO) <- c("protein", "GO_ID", "GOslim", "V4")
 
-#read in the `blast` output from the _C. gigas_ transcriptome
-blastout <- read.delim("analyses/0409/_blast-sep.tab", sep = '\t', header = FALSE)
+#`join` prot and blastGO by "protein":
+protGOslim <- left_join(prot, blastGO, by = "protein")
 
-#rename column "V4" as uniprot_acc
-colnames(blastout) <- c("V1", "V2", "V3", "uniprot_acc", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15")
+#575 rows instead of 69. There are multiple GOslim IDs. Just save the biogical process ones ("P" in column "V4")
 
-#`join` the blastout file with the uniprot_SP file based on "uniprot_acc"
-blast_SP_GO <- left_join(blastout, uniprot_SP, by = "uniprot_acc")
-#same number of rows! 
-
-
-#`join` the blast_SP_GO and prot based on "uniprot_acc"
-prot_annot <- left_join(prot, blast_SP_GO, by = "uniprot_acc")
-#THERE ARE DUPLICATE PROTEINS ---> NEED TO FIGURE OUT HOW TO FIX THAT
-
-write.table(prot_annot, "analyses/diff_abundant-prot-annotated.tab", sep = '\t', row.names = FALSE, quote = FALSE)
+write.table(protGOslim, "analyses/BLAST-to-GOslim/protGOslim.tab", sep = '\t', row.names = FALSE, quote = FALSE)
 

@@ -23,8 +23,17 @@ Table from [01-blastp-to-GOslim.ipynb](https://github.com/grace-ac/paper-pacific
 [_blast-sep.tab](https://raw.githubusercontent.com/grace-ac/paper-pacific.oyster-larvae/master/analyses/BLAST-to-GOslim/_blast-sep.tab)_    
 Same as [0327-cgseedblast-sprot.tab](https://raw.githubusercontent.com/grace-ac/paper-pacific.oyster-larvae/master/analyses/BLAST-to-GOslim/0327-cgseedblast-sprot.tab), except that the columns are completely separated by tab (no more commas or |). Useful for table joining. 
 
-  
+[_prot-final.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/_prot-final.tab)_        
+Table from this notebook: [02-detected-prots-annotate-GOslim.ipynb](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynb). This table is derived from [20190403-2015Cgseed-protcomp.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/20190403-2015Cgseed-protcomp.tab), and contains the protein names (column 1), the temperature treatments (column 2), log 2FC (column 3), SE (column 4), T value (column 5), DF (column 6), and pvalue (volumn 7). 
 
+[_prot.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/_prot.tab)_    
+Table from this notebook: [02-detected-prots-annotate-GOslim.ipynb](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynb). This table is derived from [20190403-2015Cgseed-protcomp.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/20190403-2015Cgseed-protcomp.tab), it is the same exact table, but every column is completely separated by a tab (no commas or |'s).       
 
+[protGOslim.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/protGOslim.tab)      
+Table from this notebook: [02-detected-prots-annotate-GOslim.ipynb](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynb), and this R script: [scripts/03-join-annotate-diffexp-prot.R](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/scripts/03-join-annotate-diffexp-prot.R). Table is the same as [_prot-final.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/_prot-final.tab)_ , but has three more columns tacked on the end: GO IDs (column 8), GO slim description (column 9), and whether the GOslim term falls under biological process (P), cellular component (C), or molecular function (F). 
 
- 
+[proteins_comp_annot_threshold.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/proteins_comp_annot_threshold.csv)     
+CSV table of the 69 differentially abundant proteins with annotation. 
+
+[proteins_comp_annot_threshold.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/proteins_comp_annot_threshold.tab)    
+Same table as [proteins_comp_annot_threshold.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/proteins_comp_annot_threshold.csv), but tab-delimited. 

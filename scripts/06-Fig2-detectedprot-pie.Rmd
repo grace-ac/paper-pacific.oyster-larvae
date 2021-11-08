@@ -9,6 +9,13 @@ Rmd to make pie figure of detected proteins GOslim terms (**Fig. 2** in paper).
 library(ggrepel)
 ```
 
+```{r}
+install.packages("viridis")
+```
+
+```{r}
+library(viridis)
+```
 Read in the GOslim pie table made in notebook [02-detected-prots-annotate-GOslim.ipynb](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynbhttps://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynb)
 ```{r}
 piecounts <- read.csv("../analyses/Fig2-pie/GOslim-P-pie-detectedprots.txt", header = FALSE)
@@ -20,13 +27,65 @@ Set pie colors:
 piecolors <- rainbow(14)
 ```
 
+Pretty pie chart: 
+https://stackoverflow.com/questions/53227164/how-can-i-avoid-pie-chartlegend-overlap-in-r 
+
+structure(c(ARSON = 833L, ASSAULT = 30743L, BATTERY = 91237L, 
+BURGLARY = 29298L, `CRIMINAL DAMAGE` = 57539L, `CRIMINAL TRESPASS` = 14353L, 
+`DECEPTIVE PRACTICE` = 17472L, HOMICIDE = 640L, KIDNAPPING = 517L, 
+`MOTOR VEHICLE THEFT` = 23724L, NARCOTOCS = 55685L, `OFFENSE INVOLVING CHILDREN` = 3347L, 
+`OTHER OFFENSE` = 30878L, `PUBLIC OFFENSE` = 3833L, `PUBLIC PEACE VIOLATION` = 3632L, 
+ROBBERY = 18891L, `SEX CRIME` = 9331L, THEFT = 103255L, `WEAPONS VIOLATION` = 4792L
+), .Dim = 19L, .Dimnames = list(. = c("ARSON", "ASSAULT", "BATTERY", 
+"BURGLARY", "CRIMINAL DAMAGE", "CRIMINAL TRESPASS", "DECEPTIVE PRACTICE", 
+"HOMICIDE", "KIDNAPPING", "MOTOR VEHICLE THEFT", "NARCOTOCS", 
+"OFFENSE INVOLVING CHILDREN", "OTHER OFFENSE", "PUBLIC OFFENSE", 
+"PUBLIC PEACE VIOLATION", "ROBBERY", "SEX CRIME", "THEFT", "WEAPONS VIOLATION"
+)), class = "table") -> Type
+
+```{r}
+structure(c('other biological processes' = 833L, 'other metabolic processses' = 30743L, 'cell organization and biogenesis' = 91237L, 'developmental processes' = 29298L, 'transport' = 57539L, 'protein metabolism' = 57539L, 'RNA metabolism' = 14353L, 'signal transduction' = 17472L, 'stress reponse' = 640L, 'cell cycle and proliferation' = 517L, 'death' = 23724L, 'cell-cell signaling' = 55685L, 'cell adhesion' = 3347L, 'DNA metabolism' = 30878L), .Dim = 14L, .Dimnames = list(. = c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism")), class = "table") -> Type
+#sort Type 
+Type <- sort(Type, decreasing = TRUE) 
+piepercent <- scales::percent(as.numeric(Type/sum(Type)))
+par(mar = c(1, 1, 1, 1)) # bltr
+
+pie(
+  Type, 
+  edges = 200, 
+  radius = 0.8,
+  clockwise = TRUE, # IMPORTANT
+  angle = 45, 
+  col = viridis::viridis_pal(option = "magma", direction=-1)(length(Type)),  # BETTER COLOR PALETTE
+  labels = tail(piepercent, -7), # NEVER DISPLAY OVERLAPPING LABELS
+  cex = 0.7
+)
+
+legend(
+  x = 1.2, # DELIBERATE POSITION
+  y = 0.5, # DELIBERATE POSITION
+  inset = .05, 
+  legend = names(Type), # YOU WERE PASSING IN _ALL_ THE REPEAT NAMES
+  fill = viridis::viridis_pal(option = "magma", direction=-1)(length(Type)),  # USE THE SAME COLOR PALETTE
+  horiz = FALSE,
+  cex = 0.6, # PROPER PARAMETER FOR TEXT SIZE
+  text.width = 0.7 # SET THE BOX WIDTH
+)
+
+
+```
+
+
+
 ```{r}
 slices <- c(206, 175, 150, 149, 102, 94, 84, 79, 72, 68, 25, 20, 19, 13) #create vector of counts of GOslims based on the file read in above
-lbls <- c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism") #create vector of GOslim terms in the same order as the number of counts
+lbls <- c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism")
+#create vector of GOslim terms in the same order as the number of counts
 pct <- round(slices/sum(slices)*100) #get percentages of each GOslim term
 lbls <- paste(lbls, pct) #add percents to labels
 lbls <- paste(lbls, "%", sep = "") #ad % to labels
 pie(slices, labels = lbls, col = piecolors, radius = 0.7)
+legend("topright", c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism"), cex = 0.8, fill = rainbow(slices))
 ```
 
 ```{r}
@@ -36,7 +95,7 @@ lbls <- c("other biological process", "other metabolic processes", "cell organiz
 pct <- round(slices/sum(slices)*100) #get percentages of each GOslim term
 lbls <- paste(lbls, pct) #add percents to labels
 lbls <- paste(lbls, "%", sep = "") #ad % to labels
-pie(slices, labels = lbls, col = piecolors, radius = 0.7)
+pie(slices, labels = lbls, col = piecolors, radius = 0.5)
 ```
 
 

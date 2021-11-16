@@ -61,37 +61,38 @@ legend(
 )
 ```
 
-
-## Maybe a bar chart is better? Here's a bar graph: 
-
-Data:
+Save pie as pdf to analyses:
 ```{r}
-counts <- read.csv("../analyses/Fig2-pie/GOslim-P-pie-detectedprots.txt", header = FALSE)
-head(counts)
+pdf("../analyses/Fig2-pie/detectedprots-GOslim-pie.pdf")
+structure(c('other biological processes' = 206L, 'other metabolic processses' = 175L, 'cell organization and biogenesis' = 150L, 'developmental processes' = 149L, 'transport' = 102L, 'protein metabolism' = 94L, 'RNA metabolism' = 84L, 'signal transduction' = 79L, 'stress reponse' = 72L, 'cell cycle and proliferation' = 68L, 'death' = 25L, 'cell-cell signaling' = 20L, 'cell adhesion' = 19L, 'DNA metabolism' = 13L), .Dim = 14L, .Dimnames = list(. = c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism")), class = "table") -> Type
+#sort Type 
+Type <- sort(Type, decreasing = TRUE) 
+piepercent <- round(Type/sum(Type)*100)
+par(mar = c(1, 1, 1, 1)) 
+
+pie(
+  Type, 
+  edges = 200, 
+  radius = 0.65,
+  clockwise = TRUE, # IMPORTANT
+  angle = 45, 
+  col = viridis::viridis_pal(option = "magma", direction=-1)(length(Type)),  # BETTER COLOR PALETTE
+  labels = piepercent, # NEVER DISPLAY OVERLAPPING LABELS
+  cex = 0.7
+)
+
+legend(
+  x = 0.80, # DELIBERATE POSITION
+  y = 0.5, # DELIBERATE POSITION
+  inset = .05, 
+  legend = names(Type), # YOU WERE PASSING IN _ALL_ THE REPEAT NAMES
+  fill = viridis::viridis_pal(option = "magma", direction=-1)(length(Type)),  # USE THE SAME COLOR PALETTE
+  horiz = FALSE,
+  cex = 0.65, # PROPER PARAMETER FOR TEXT SIZE
+  text.width = 0.8 # SET THE BOX WIDTH
+)
 ```
 
-
-
-#### Old code below: 
-
-slices <- c(206, 175, 150, 149, 102, 94, 84, 79, 72, 68, 25, 20, 19, 13) #create vector of counts of GOslims based on the file read in above
-lbls <- c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism")
-#create vector of GOslim terms in the same order as the number of counts
-pct <- round(slices/sum(slices)*100) #get percentages of each GOslim term
-lbls <- paste(lbls, pct) #add percents to labels
-lbls <- paste(lbls, "%", sep = "") #ad % to labels
-pie(slices, labels = lbls, col = piecolors, radius = 0.7)
-legend("topright", c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism"), cex = 0.8, fill = rainbow(slices))
-
-
-
-pdf("../analyses/Fig2-pie/detectedprots-GOslim-pie.pdf")
-slices <- c(206, 175, 150, 149, 102, 94, 84, 79, 72, 68, 25, 20, 19, 13) #create vector of counts of GOslims based on the file read in above
-lbls <- c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism") #create vector of GOslim terms in the same order as the number of counts
-pct <- round(slices/sum(slices)*100) #get percentages of each GOslim term
-lbls <- paste(lbls, pct) #add percents to labels
-lbls <- paste(lbls, "%", sep = "") #ad % to labels
-pie(slices, labels = lbls, col = piecolors, radius = 0.5)
 
 
 

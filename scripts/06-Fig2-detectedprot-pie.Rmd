@@ -63,7 +63,6 @@ legend(
 
 Save pie as pdf to analyses:
 ```{r}
-pdf("../analyses/Fig2-pie/detectedprots-GOslim-pie.pdf")
 structure(c('other biological processes' = 206L, 'other metabolic processses' = 175L, 'cell organization and biogenesis' = 150L, 'developmental processes' = 149L, 'transport' = 102L, 'protein metabolism' = 94L, 'RNA metabolism' = 84L, 'signal transduction' = 79L, 'stress reponse' = 72L, 'cell cycle and proliferation' = 68L, 'death' = 25L, 'cell-cell signaling' = 20L, 'cell adhesion' = 19L, 'DNA metabolism' = 13L), .Dim = 14L, .Dimnames = list(. = c("other biological process", "other metabolic processes", "cell organization and biogenesis", "developmental processes", "transport", "protein metabolism", "RNA metabolism", "signal transduction", "stress response", "cell cycle and proliferation", "death", "cell-cell signaling", "cell adhesion", "DNA metabolism")), class = "table") -> Type
 #sort Type 
 Type <- sort(Type, decreasing = TRUE) 
@@ -89,8 +88,12 @@ legend(
   fill = viridis::viridis_pal(option = "magma", direction=-1)(length(Type)),  # USE THE SAME COLOR PALETTE
   horiz = FALSE,
   cex = 0.65, # PROPER PARAMETER FOR TEXT SIZE
-  text.width = 0.8 # SET THE BOX WIDTH
+  text.width = 0.95 # SET THE BOX WIDTH
 )
+
+dev.copy(pdf, '../analyses/Fig2-pie/detectedprots-GOslim-pie.pdf')
+dev.off()
+
 ```
 
 

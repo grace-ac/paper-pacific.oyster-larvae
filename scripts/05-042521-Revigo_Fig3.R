@@ -87,5 +87,5 @@ p1;
 # Uncomment the line below to also save the plot to a file.
 # The file type depends on the extension (default=pdf).
 
-# ggsave("analyses/042521-diffab_enrich-revigo-plot.pdf");
+ ggsave("analyses/revigo/042521-diffab_enrich-revigo-plot.pdf");
 

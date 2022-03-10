@@ -32,6 +32,5 @@ Protocol that provides a bit more information on what was used for the R script 
 - [SuppFile07-20190403-2015Cgseed-protcomp.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/supplemental-files/SuppFile07-20190403-2015Cgseed-protcomp.csv)     
 Table of the 2,808 differentially abundant proteins that were identified in [SuppFile05-02-Cgseed-diff-exp.R](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/supplemental-files/SuppFile05-02-Cgseed-diff-exp.R), using the threshold of <2.00 and >2.00 log2FC.    
 
-- [SuppFile08-revigo-detected-proteome-108.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/supplemental-files/SuppFile08-revigo-detected-proteome-108.csv)
-
-- [SuppFile09-proteins_comp_annot_threshold.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/supplemental-files/SuppFile09-proteins_comp_annot_threshold.csv)
+- [SuppFile08-revigo-detected-proteome-108.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/supplemental-files/SuppFile08-revigo-detected-proteome-108.csv)      
+Table of the 108 enriched biological process GO terms, when comparing the list of 2,808 detected proteins ([SuppFile07-20190403-2015Cgseed-protcomp.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/supplemental-files/SuppFile07-20190403-2015Cgseed-protcomp.csv)) to the full Crassostrea gigas proteome. 

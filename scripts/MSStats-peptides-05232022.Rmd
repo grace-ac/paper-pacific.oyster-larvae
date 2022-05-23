@@ -14,7 +14,8 @@ sessionInfo()
 ```
 
 ```{r}
-library(MSstats)
+#library(MSstats)
+library(dplyr)
 ```
 
 
@@ -63,15 +64,28 @@ Error in dataProcess(PeakAreas, normalization = "equalizeMedians", summaryMethod
 Add fraction column and have all cells listed as "1" from this google forum post: https://groups.google.com/forum/#!searchin/msstats/fractionations%7Csort:date/msstats/dVh6IEE0xTE/jiokWrNSCgAJ
 ```{r}
 PeakAreas$Fraction <- "1"
+PeakAreas
 ```
 
 Re-try the dataProcess function
 ```{r}
-QuantData <- dataProcess(PeakAreas)
+QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
+                         summaryMethod="TMP",
+                         cutoffCensored="minFeature", censoredInt="0",
+                         MBimpute=TRUE,
+                         maxQuantileforCensored=0.999)
 ```
-Error in dataProcess(PeakAreas) : Please remove duplicate rows in the list above.
+Error in dataProcess(PeakAreas, normalization = "equalizeMedians", summaryMethod = "TMP", : Please remove duplicate rows in the list above.
 
 Remove any duplicate rows:
+```{r}
+library(dplyr)
+mydata <- PeakAreas
+
+# Remove duplicate rows of the dataframe
+distinct(mydata)
+```
+There aren't any duplicate rows... 
 
 
 

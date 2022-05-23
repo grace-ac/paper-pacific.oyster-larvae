@@ -1,0 +1,16 @@
+---
+title: "peptide-comparison"
+output: html_document
+---
+
+Script to use MSStats to look at peptides from 2015 Oyster DIA proteomics. Compare peptide abundance between recently-settled oyster larvae held at 23C vs 29C. 
+
+Script roughly follows:
+Yaamini's MSStats script: https://github.com/RobertsLab/project-oyster-oa/blob/master/analyses/DNR_Skyline_20170524/2017-06-22-MSstats/2017-06-22-MSstats.R
+
+MSstats manual (starting p44):http://msstats.org/wp-content/uploads/2017/01/MSstats_v3.7.3_manual.pdf
+```{r}
+sessionInfo()
+```
+
+

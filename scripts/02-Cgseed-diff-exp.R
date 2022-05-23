@@ -19,3 +19,4 @@ diffex <- rbind(diffexlow, diffexup)
 colnames(diffex) <- c("Protein", "Label", "log2FC", "uniprot_accession_ID", "gene_ID", "sprot_uniprotaccession_geneID", "e-value")
   
 write.csv(diffex, "analyses/annotated-prot-lists/proteins_comp_annot_threshold.csv", row.names = FALSE)
+

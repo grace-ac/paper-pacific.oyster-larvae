@@ -2,6 +2,7 @@
 title: "peptide-comparison"
 output: html_document
 ---
+May 23, 2022
 
 Script to use MSStats to look at peptides from 2015 Oyster DIA proteomics. Compare peptide abundance between recently-settled oyster larvae held at 23C vs 29C. 
 
@@ -14,7 +15,7 @@ sessionInfo()
 ```
 
 ```{r}
-#library(MSstats)
+library(MSstats)
 library(dplyr)
 ```
 
@@ -76,6 +77,10 @@ QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
                          maxQuantileforCensored=0.999)
 ```
 Error in dataProcess(PeakAreas, normalization = "equalizeMedians", summaryMethod = "TMP", : Please remove duplicate rows in the list above.
+
+https://skyline.ms/announcements/home/support/thread.view?rowId=27558 
+the following columns need to uniquely identify each row:
+ProteinName, PeptideModifiedSequence, PrecursorCharge, FragmentIon, ProductCharge, IsotopeLabelType, FileName
 
 Remove any duplicate rows:
 ```{r}

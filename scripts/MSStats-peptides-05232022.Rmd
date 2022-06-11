@@ -22,57 +22,28 @@ library(dplyr)
 
 ## Import Data
 
-read in .csv (locally. zip is in github)
+read in .csv of PeakAreas from 01-MSstats-Cgseed-DIA.R. In excel, I copy and pasted the peptide sequences into the ProteinName column. 
 ```{r}
-rawPeakAreas <- read.csv("../data/20190403-MSstats-report_peptides.csv")
-head(rawPeakAreas)
-```
-
-rename columns 
-(Note: this file was made roughly in excel by pasting the Petide.Sequence into the Protein.Name column)
-```{r}
-names(rawPeakAreas) <- c("ProteinName", "PeptideSequence", "PeptideModifiedSequence", "PrecursorCharge", "PrecursorMz", "FragmentIon", "ProductCharge", "ProductMz", "IsotopeLabelType", "Condition", "BioReplicate", "FileName", "Area", "StandardType", "Truncated", "DetectionQValue")
-
-head(rawPeakAreas)
-```
-
-convert raw Skyline output to MSstats format     
-rawPeakAreas has 719904 obs and 16 variables
-```{r}
-PeakAreas <- SkylinetoMSstatsFormat(rawPeakAreas)
+PeakAreas <- read.csv("../data/20220611-PeakAreas.csv")
 head(PeakAreas)
 ```
-PeakAreas has 693452 obs and 15 variables
 
-Note:
-** Peptides, that are used in more than one proteins, are removed.
-NAs introduced by coercionNAs introduced by coercion** Intensities with great than 0.01 in DetectionQValue are replaced with zero.
-** 14 features have all NAs or zero intensity values and are removed.
-** 6198 features have 1 or 2 intensities across runs and are removed.
+PeakAreas has 188508 obs and 15 variables
+
+
 
 ## Process Data
-
-```{r}
-QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
-                         summaryMethod="TMP",
-                         cutoffCensored="minFeature", censoredInt="0",
-                         MBimpute=TRUE,
-                         maxQuantileforCensored=0.999)
-```
-Error in dataProcess(PeakAreas, normalization = "equalizeMedians", summaryMethod = "TMP", : ** MSstats suspects that there are fractionations and potentially technical replicates too. Please add Fraction column in the input.
-
-
 Add fraction column and have all cells listed as "1" from this google forum post: https://groups.google.com/forum/#!searchin/msstats/fractionations%7Csort:date/msstats/dVh6IEE0xTE/jiokWrNSCgAJ
 ```{r}
 PeakAreas$Fraction <- "1"
 PeakAreas
 ```
 
-Re-try the dataProcess function
+dataProcess function
 ```{r}
 QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
                          summaryMethod="TMP",
-                         cutoffCensored="minFeature", censoredInt="0",
+                         censoredInt="0",
                          MBimpute=TRUE,
                          maxQuantileforCensored=0.999)
 ```
@@ -88,16 +59,28 @@ library(dplyr)
 mydata <- PeakAreas
 
 # Remove duplicate rows of the dataframe
-distinct(mydata)
+mydata %>%
+  distinct(ProteinName, PeptideSequence, PrecursorCharge, FragmentIon, ProductCharge, IsotopeLabelType, Run, .keep_all = TRUE)
 ```
 There aren't any duplicate rows... 
 
 
+The rows are all unique. The file names are unique, and there are 2 bioreplicates... so I'm not sure how to fix this. 
 
+Just playing around... I'll remove all rows associated with biorep 2. 
+```{r}
+mydata <- filter(PeakAreas, BioReplicate == 1)
+head(mydata)
+```
 
+Retry dataProcess with mydata (346726 obs, 16 columns)
+```{r}
+QuantData <- dataProcess(mydata, normalization='equalizeMedians',
+                         summaryMethod="TMP",
+                         censoredInt="0",
+                         MBimpute=TRUE,
+                         maxQuantileforCensored=0.999)
+```
 
-
-
-
-
+Even with removing bioreplicate rows... still says that there are duplicate rows. I wonder if it's because the first two columns are the same?? 
 

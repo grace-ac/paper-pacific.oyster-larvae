@@ -47,40 +47,14 @@ QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
                          MBimpute=TRUE,
                          maxQuantileforCensored=0.999)
 ```
-Error in dataProcess(PeakAreas, normalization = "equalizeMedians", summaryMethod = "TMP", : Please remove duplicate rows in the list above.
 
-https://skyline.ms/announcements/home/support/thread.view?rowId=27558 
-the following columns need to uniquely identify each row:
-ProteinName, PeptideModifiedSequence, PrecursorCharge, FragmentIon, ProductCharge, IsotopeLabelType, FileName
-
-Remove any duplicate rows:
-```{r}
-library(dplyr)
-mydata <- PeakAreas
-
-# Remove duplicate rows of the dataframe
-mydata %>%
-  distinct(ProteinName, PeptideSequence, PrecursorCharge, FragmentIon, ProductCharge, IsotopeLabelType, Run, .keep_all = TRUE)
-```
-There aren't any duplicate rows... 
+ 
+count
+<chr>
+# of Protein	10219		
+# of Peptides/Protein	1-1		
+# of Transitions/Peptide	1-5
 
 
-The rows are all unique. The file names are unique, and there are 2 bioreplicates... so I'm not sure how to fix this. 
 
-Just playing around... I'll remove all rows associated with biorep 2. 
-```{r}
-mydata <- filter(PeakAreas, BioReplicate == 1)
-head(mydata)
-```
-
-Retry dataProcess with mydata (346726 obs, 16 columns)
-```{r}
-QuantData <- dataProcess(mydata, normalization='equalizeMedians',
-                         summaryMethod="TMP",
-                         censoredInt="0",
-                         MBimpute=TRUE,
-                         maxQuantileforCensored=0.999)
-```
-
-Even with removing bioreplicate rows... still says that there are duplicate rows. I wonder if it's because the first two columns are the same?? 
 

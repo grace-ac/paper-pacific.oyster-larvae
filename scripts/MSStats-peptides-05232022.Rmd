@@ -59,13 +59,8 @@ QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
                          maxQuantileforCensored=0.999)
 ```
 
- 
-count
-<chr>
-# of Protein	10219		
-# of Peptides/Protein	1-1		
-# of Transitions/Peptide	1-5
-
-
+```{r}
+head(QuantData$ProcessedData)
+```
 
 

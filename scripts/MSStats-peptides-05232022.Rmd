@@ -74,6 +74,9 @@ Note: 20220614 --> manually moved the profile plots to analyses/MS_stats/peptide
 dataProcessPlots(data = QuantData, type = "QCPlot", width=5, height=5, address = "../analyses/MS_stats/peptides")
 ```
 
+```{r}
+dataProcessPlots(data = QuantData, type="Conditionplot", width=5, height=5, address = "../analyses/MS_stats/peptides/peptides")
+```
 
 ## Create comparison plots
 

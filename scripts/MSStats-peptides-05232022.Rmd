@@ -62,5 +62,35 @@ QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
 ```{r}
 head(QuantData$ProcessedData)
 ```
+## Create dataprocess plots
 
+```{r}
+dataProcessPlots(data = QuantData, type = "ProfilePlot", width=5, height=5, address = "../analyses/")
+```
+
+Note: 20220614 --> manually moved the profile plots to analyses/MS_stats/peptides 
+
+```{r}
+dataProcessPlots(data = QuantData, type = "QCPlot", width=5, height=5, address = "../analyses/MS_stats/peptides")
+```
+
+
+## Create comparison plots
+
+### Create contrast matrix
+```{r}
+levels(QuantData$ProcessedData$GROUP_ORIGINAL) #Levels: "23C" and "29C"
+comparison <- matrix(c(-1, 1), nrow = 1)
+row.names(comparison) <- "23C-29C"
+print(comparison)
+```
+
+
+```{r}
+#### GROUP COMPARISON
+testResultOneComparison <- groupComparison(contrast.matrix = comparison, data = QuantData) 
+testResultOneComparison$ComparisonResult #View results
+proteinComparisonResults <- testResultOneComparison$ComparisonResult #Save as new dataframe
+write.csv(proteinComparisonResults, "analyses/20220614-2015Cgseed-peptidecomp.csv", col.names = c("Peptide", "Label", "log2FC", "SE", "Tvalue", "DF", "pvalue"), row.names = F) #write out comparison
+```
 

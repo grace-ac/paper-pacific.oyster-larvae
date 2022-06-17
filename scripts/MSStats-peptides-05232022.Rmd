@@ -82,14 +82,16 @@ Note: 20220614 --> manually moved the profile plots to analyses/MS_stats/peptide
 
 ### Create contrast matrix
 ```{r}
-levels(QuantData$ProcessedData$GROUP_ORIGINAL) #Levels: "23C" and "29C"
+levels(QuantData$ProteinLevelData$GROUP) #Levels: "23C" and "29C"
 comparison <- matrix(c(-1, 1), nrow = 1)
 row.names(comparison) <- "23C-29C"
+groups = levels(QuantData$ProteinLevelData$GROUP)
+colnames(comparison) <- groups[order(as.numeric(groups))]
 print(comparison)
 ```
-
+Use this to get help creating contrast matrix in above code chunk:
 ```{r}
-MSstatsContrastMatrix(contrasts = )
+?groupComparison
 ```
 
 

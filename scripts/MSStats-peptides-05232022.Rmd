@@ -122,6 +122,8 @@ Manually move to analyses/MS_stats/peptides (06172022)
 
 Volcano plot shows 2 peptides up-regulated and 1 peptide down-regulated, all the rest are not significant
 
+In the data file, those three peptides are only present in one or the other temperature.  
+
 #### Comparison
 ```{r}
 groupComparisonPlots(data = peptideComparisonResults, type = "ComparisonPlot") #Comparison plot, alpha = 0.05

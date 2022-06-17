@@ -94,9 +94,9 @@ Use this to get help creating contrast matrix in above code chunk:
 ?groupComparison
 ```
 
+### Group Comparison
 
 ```{r}
-#### GROUP COMPARISON
 testResultOneComparison <- groupComparison(contrast.matrix = comparison, data = QuantData) 
 ```
 
@@ -105,10 +105,20 @@ head(testResultOneComparison$ComparisonResult) #View results
 ```
 
 ```{r}
-proteinComparisonResults <- testResultOneComparison$ComparisonResult #Save as new dataframe
+peptideComparisonResults <- testResultOneComparison$ComparisonResult #Save as new dataframe
 ```
 
 ```{r}
-write.csv(proteinComparisonResults, "../analyses/20220617-2015Cgseed-peptidecomp.csv", col.names = c("Peptide", "Label", "log2FC", "SE", "Tvalue", "DF", "pvalue"), row.names = F) #write out comparison
+write.csv(peptideComparisonResults, "../analyses/20220617-2015Cgseed-peptidecomp.csv", col.names = c("Peptide", "Label", "log2FC", "SE", "Tvalue", "DF", "pvalue"), row.names = F) #write out comparison
 ```
+
+### Group Comparison Plots:
+
+```{r}
+
+groupComparisonPlots(data = proteinComparisonResults, type = "VolcanoPlot") #Volcano plot, alpha = 0.05.
+
+groupComparisonPlots(data = proteinComparisonResults, type = "ComparisonPlot") #Comparison plot, alpha = 0.05
+```
+
 

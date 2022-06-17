@@ -109,16 +109,23 @@ peptideComparisonResults <- testResultOneComparison$ComparisonResult #Save as ne
 ```
 
 ```{r}
-write.csv(peptideComparisonResults, "../analyses/20220617-2015Cgseed-peptidecomp.csv", col.names = c("Peptide", "Label", "log2FC", "SE", "Tvalue", "DF", "pvalue"), row.names = F) #write out comparison
+write.csv(peptideComparisonResults, "../analyses/MS_stats/peptides/20220617-2015Cgseed-peptidecomp.csv", col.names = c("Peptide", "Label", "log2FC", "SE", "Tvalue", "DF", "pvalue"), row.names = F) #write out comparison
 ```
 
 ### Group Comparison Plots:
 
+#### Volano
 ```{r}
-
-groupComparisonPlots(data = proteinComparisonResults, type = "VolcanoPlot") #Volcano plot, alpha = 0.05.
-
-groupComparisonPlots(data = proteinComparisonResults, type = "ComparisonPlot") #Comparison plot, alpha = 0.05
+groupComparisonPlots(data = peptideComparisonResults, type = "VolcanoPlot") #Volcano plot, alpha = 0.05.
 ```
+Manually move to analyses/MS_stats/peptides (06172022)
+
+Volcano plot shows 2 peptides up-regulated and 1 peptide down-regulated, all the rest are not significant
+
+#### Comparison
+```{r}
+groupComparisonPlots(data = peptideComparisonResults, type = "ComparisonPlot") #Comparison plot, alpha = 0.05
+```
+Manually move to analyses/MS_stats/peptides (06172022)
 
 

@@ -98,8 +98,17 @@ Use this to get help creating contrast matrix in above code chunk:
 ```{r}
 #### GROUP COMPARISON
 testResultOneComparison <- groupComparison(contrast.matrix = comparison, data = QuantData) 
-testResultOneComparison$ComparisonResult #View results
+```
+
+```{r}
+head(testResultOneComparison$ComparisonResult) #View results
+```
+
+```{r}
 proteinComparisonResults <- testResultOneComparison$ComparisonResult #Save as new dataframe
-write.csv(proteinComparisonResults, "analyses/20220617-2015Cgseed-peptidecomp.csv", col.names = c("Peptide", "Label", "log2FC", "SE", "Tvalue", "DF", "pvalue"), row.names = F) #write out comparison
+```
+
+```{r}
+write.csv(proteinComparisonResults, "../analyses/20220617-2015Cgseed-peptidecomp.csv", col.names = c("Peptide", "Label", "log2FC", "SE", "Tvalue", "DF", "pvalue"), row.names = F) #write out comparison
 ```
 

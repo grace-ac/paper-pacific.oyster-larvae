@@ -1,0 +1,68 @@
+---
+title: "MSstats-proteins"
+output: html_document
+date: '2022-06-20'
+---
+`MSStats` package seems to have changed since I initially ran code for protein comparisons. 
+
+Re-running protein comparisons. 
+
+```{r}
+library(MSstats)
+```
+
+Script roughly follows:
+Yaamini's MSStats script: https://github.com/RobertsLab/project-oyster-oa/blob/master/analyses/DNR_Skyline_20170524/2017-06-22-MSstats/2017-06-22-MSstats.R
+
+MSstats manual (starting p44):http://msstats.org/wp-content/uploads/2017/01/MSstats_v3.7.3_manual.pdf
+
+
+read in .csv (locally. zip is in github)
+I unzipped the 20190403-MSstats-report.csv and it's local
+```{r}
+rawPeakAreas <- read.csv("../data/20190403-MSstats-report.csv")
+head(rawPeakAreas)
+```
+719904 observations, 16 variables
+
+Rename columns:
+```{r}
+names(rawPeakAreas) <- c("ProteinName", "PeptideSequence", "PeptideModifiedSequence", "PrecursorCharge", "PrecursorMz", "FragmentIon", "ProductCharge", "ProductMz", "IsotopeLabelType", "Condition", "BioReplicate", "FileName", "Area", "StandardType", "Truncated", "DetectionQValue")
+head(rawPeakAreas)
+```
+
+Convert raw Skyline output to MSstats format
+rawPeakAreas has 719904 obs and 16 variables
+```{r}
+PeakAreas <- SkylinetoMSstatsFormat(rawPeakAreas)
+head(PeakAreas)
+```
+182068 observations, 11 variables
+
+Write out PeakAreas to github for use in Peptide comparison
+```{r}
+write.csv(PeakAreas, "../data/20220620-PeakAreas.csv", row.names = FALSE, quote = FALSE)
+```
+
+## Process Data
+For some reason this doesn't need a Fraction column... it's working fine with the 11 columns... 
+dataProcess function
+```{r}
+QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
+                         summaryMethod="TMP",
+                         censoredInt="0",
+                         MBimpute=TRUE,
+                         maxQuantileforCensored=0.999)
+```
+
+```{r}
+head(QuantData$ProteinLevelData)
+```
+
+## Create dataprocess plots
+```{r}
+dataProcessPlots(data = QuantData, type = "ProfilePlot", width=5, height=5, address = "../analyses/MS_stats/20220620Protein")
+```
+
+
+

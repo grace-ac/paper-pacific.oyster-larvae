@@ -35,7 +35,7 @@ library(dplyr)
 
 read in .csv of PeakAreas from 01-MSstats-Cgseed-DIA.R. In excel, I copy and pasted the peptide sequences into the ProteinName column. 
 ```{r}
-PeakAreas <- read.csv("../data/20220611-PeakAreas.csv")
+PeakAreas <- read.csv("../data/20220611-PeakAreas-peptides.csv")
 head(PeakAreas)
 ```
 
@@ -60,7 +60,7 @@ QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
 ```
 
 ```{r}
-head(QuantData$ProcessedData)
+head(QuantData$ProteinLevelData)
 ```
 ## Create dataprocess plots
 
@@ -89,6 +89,7 @@ groups = levels(QuantData$ProteinLevelData$GROUP)
 colnames(comparison) <- groups[order(as.numeric(groups))]
 print(comparison)
 ```
+
 Use this to get help creating contrast matrix in above code chunk:
 ```{r}
 ?groupComparison

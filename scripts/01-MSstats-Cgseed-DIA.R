@@ -36,9 +36,9 @@ PeakAreas <- SkylinetoMSstatsFormat(rawPeakAreas)
 
 head(PeakAreas)
 
-#June 11, 2022 
+#June 20, 2022 
 #Write out PeakAreas to github for use in Peptide comparison
-write.csv(PeakAreas, "data/20220611-PeakAreas.csv", row.names = FALSE, quote = FALSE)
+write.csv(PeakAreas, "data/20220620-PeakAreas.csv", row.names = FALSE, quote = FALSE)
 
 #### Process data ============================================================
 QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',

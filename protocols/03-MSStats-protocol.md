@@ -11,5 +11,5 @@ The resources used to create the script were:
 - [MS Stats R Package Manual](https://bioconductor.org/packages/release/bioc/manuals/MSstats/man/MSstats.pdf)
 - [MS Stats Manual](http://msstats.org/wp-content/uploads/2017/01/MSstats_v3.7.3_manual.pdf)
 
-A threshold of >2.00 and <-2.00 log-2 fold change was decided to be significant for determining differntially abundant proteins between the two temperature treatments (differs from default in MS Stats). (Threshold used in the R Script: [scripts/02-Cgseed-diff-exp.R](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/scripts/02-Cgseed-diff-exp.R))
+A threshold of >2.00 and <-2.00 log-2 fold change was decided to be significant for determining  proteins of physiological importance between the two temperature treatments (differs from default in MS Stats). (Threshold used in the R Script: [scripts/02-Cgseed-diff-exp.R](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/scripts/02-Cgseed-diff-exp.R))
 

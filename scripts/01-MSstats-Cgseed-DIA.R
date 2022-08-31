@@ -12,7 +12,6 @@ library(MSstats)
 ########==IMPORT AND PROCESS DATA===============================================
 
 #read in .csv (locally. zip is in github)
-#I unzipped the 20190403-MSstats-report.csv and it's local
 rawPeakAreas <- read.csv("data/20190403-MSstats-report.csv")
 
 head(rawPeakAreas)
@@ -26,9 +25,6 @@ head(rawPeakAreas)
 #rawPeakAreas has 719904 obs and 16 variables
 PeakAreas <- SkylinetoMSstatsFormat(rawPeakAreas)
 
-#june 20,2022 - PeakAreas has 182068 obs, and 11 variables... 
-
-#Old notes:
 #PeakAreas has 188508 obs, and 15 variables
 #Output message: 
 #** Peptides, that are used in more than one proteins, are removed.
@@ -39,10 +35,6 @@ PeakAreas <- SkylinetoMSstatsFormat(rawPeakAreas)
 #  In SkylinetoMSstatsFormat(rawPeakAreas) : NAs introduced by coercion
 
 head(PeakAreas)
-
-#June 20, 2022 
-#Write out PeakAreas to github for use in Peptide comparison
-write.csv(PeakAreas, "data/20220620-PeakAreas.csv", row.names = FALSE, quote = FALSE)
 
 #### Process data ============================================================
 QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',

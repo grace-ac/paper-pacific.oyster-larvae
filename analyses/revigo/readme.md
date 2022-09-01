@@ -1,4 +1,4 @@
-directory containing output from revigo script (here: [scripts/05-042521-Revigo_Fig3.R](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/scripts/05-042521-Revigo_Fig3.R)) to create **Figure 3** for paper.
+directory containing output from revigo script (here: [scripts/05-042521-Revigo_Fig3.R](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/scripts/05-042521-Revigo_Fig3.R) to create **Figure 3** for paper, as well as outputs to create **Table 2** and **Table 3**. 
 
 - [revigo/042521-diffab_enrich-revigo-plot.pdf](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/revigo/042521-diffab_enrich-revigo-plot.pdf)    
 Plot showing the proteins of physiological interest, .pdf format. Made using [scripts/05-042521-Revigo_Fig3.R](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/scripts/05-042521-Revigo_Fig3.R).

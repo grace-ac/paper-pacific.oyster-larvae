@@ -1,7 +1,6 @@
-### Directory containing data for the 2015 DIA Oysterseed project. 
+### Directory containing data for the 2015 DIA Oysterseed project.
 
-[2015X15P8LargescaleSeed29CtoAmbient.xlsx](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/data/2015X15P8LargescaleSeed29CtoAmbient.xlsx)   
-Rhonda's excel file from when the experiment was being performed in 2015. Most of the information has since gone unused as the project became condensed to comparing differentially abundant proteins between two temperature treatments. 
+ 
 
 [20190403-2015Cgseed-protcomp.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/data/20190403-2015Cgseed-protcomp.csv)    
 Table of the 2,808 detected proteins that were differentially abundant when compared to the background [_C. gigas_ proteome](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/data/Cg_Giga_cont_prtc_AA.fasta) as determined by MS Stats (though not significantly by MS Stats cut-off values - we chose cut-off thresholds of >2.00 and <2.00 log2FC)    
@@ -16,5 +15,4 @@ Exported report from SkylineDaily, in .csv format. Protocol: [protocols/02-Skyli
 Exported report from SkylineDaily, in .xlsx format. Protocol: [protocols/02-SkylineDaily-protocol.md](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/protocols/02-SkylineDaily-protocol.md)
 
 [Cg_Giga_cont_prtc_AA.fasta](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/data/Cg_Giga_cont_prtc_AA.fasta)    
-_C. gigas_ deduced proteome in .fasta format. Used as background to compare experimental data to. 
-
+_C. gigas_ deduced proteome in .fasta format. Used as background to compare experimental data to.

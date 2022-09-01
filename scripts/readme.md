@@ -7,7 +7,12 @@ R script for using MS Stats package to analyze Skyline Daily MS Stats report. Cr
 R script for subsetting [analyses/Cgseed-protcomp-annotation-name.sorted](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/Cgseed-protcomp-annotation-name.sorted) (the identified differentially abundant proteins from MS Stats) based on a set cut-off point of > 2.00, and < -2.00 log-2 fold change. Created list of 69 differentially abundant proteins ([analyses/proteins_comp_annot_threshold.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/proteins_comp_annot_threshold.csv)).
 
 [03-join-annotate-diffexp-prot.R](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/scripts/03-join-annotate-diffexp-prot.R)    
-R script for annotating differentially expressed proteins.
+R script for annotating differentially expressed proteins.     
+Uses/creates:    
+- [analyses/BLAST-to-GOslim/_prot-final.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/_prot-final.tab)   
+- [analyses/BLAST-to-GOslim/Blastquery-GOslim-proteome.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/Blastquery-GOslim-proteome.tab)    
+- Creates: [analyses/BLAST-to-GOslim/protGOslim.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/BLAST-to-GOslim/protGOslim.tab)   
+Which then is used in [notebooks/02-detected-prots-annotate-GOslim.ipynb](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynb) to create table for manuscript **Figure 2**. 
 
 [04-23and29-GO-enrich-for-Revigo.R](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/scripts/04-23and29-GO-enrich-for-Revigo.R)    
 Uses DAVID outputs ([analyses/DAVID-outputs/23C-GOterms-david.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/DAVID-outputs/23C-GOterms-david.tab) and [analyses/DAVID-outputs/29C-GOterms-david.tab](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/DAVID-outputs/29C-GOterms-david.tab)), and creates [analyses/revigo/23C-GOterm-Foldenrich-for-Revigo.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/revigo/23C-GOterm-Foldenrich-for-Revigo.csv) and [revigo/29C-GOterm-Foldenrich-for-Revigo.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/revigo/29C-GOterm-Foldenrich-for-Revigo.csv) respectively, which become **Table 3** and **Table 2** respectively, in the manuscript.

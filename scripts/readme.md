@@ -11,7 +11,8 @@ R script for annotating differentially expressed proteins.
 
 []()     
 
-[]()     
+[05-042521-Revigo_Fig3.R](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/scripts/05-042521-Revigo_Fig3.R)      
+Uses [analyses/revigo/revigo.csv](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/revigo/revigo.csv), which is output from the revigo website, and creates [analyses/revigo/Fig3-enrich_diffabundant_proteins.png](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/revigo/Fig3-enrich_diffabundant_proteins.png) and a pdf version: [analyses/revigo/042521-diffab_enrich-revigo-plot.pdf](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/revigo/042521-diffab_enrich-revigo-plot.pdf).
 
 [06-Fig2-detectedprot-pie.Rmd](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/scripts/06-Fig2-detectedprot-pie.Rmd)      
 Rmd script for created Fig 2 pie. Uses [analyses/Fig2-pie/GOslim-P-pie-detectedprots.txt](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/Fig2-pie/GOslim-P-pie-detectedprots.txt) that was created in [notebooks/02-detected-prots-annotate-GOslim.ipynb](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/notebooks/02-detected-prots-annotate-GOslim.ipynb), and creates [analyses/Fig2-pie/detectedprots-GOslim-pie.pdf](https://github.com/grace-ac/paper-pacific.oyster-larvae/blob/master/analyses/Fig2-pie/detectedprots-GOslim-pie.pdf)    

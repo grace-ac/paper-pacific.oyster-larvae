@@ -16,7 +16,7 @@ rawPeakAreas <- read.csv("data/20190403-MSstats-report.csv")
 
 head(rawPeakAreas)
 
-#rename columns 
+#rename columns
 names(rawPeakAreas) <- c("ProteinName", "PeptideSequence", "PeptideModifiedSequence", "PrecursorCharge", "PrecursorMz", "FragmentIon", "ProductCharge", "ProductMz", "IsotopeLabelType", "Condition", "BioReplicate", "FileName", "Area", "StandardType", "Truncated", "DetectionQValue")
 
 head(rawPeakAreas)
@@ -26,7 +26,7 @@ head(rawPeakAreas)
 PeakAreas <- SkylinetoMSstatsFormat(rawPeakAreas)
 
 #PeakAreas has 188508 obs, and 15 variables
-#Output message: 
+#Output message:
 #** Peptides, that are used in more than one proteins, are removed.
 #** Intensities with great than 0.01 in DetectionQValue are replaced with zero.
 #** 10 features have all NAs or zero intensity values and are removed.
@@ -42,9 +42,9 @@ QuantData <- dataProcess(PeakAreas, normalization='equalizeMedians',
                          cutoffCensored="minFeature", censoredInt="0",
                          MBimpute=TRUE,
                          maxQuantileforCensored=0.999)
-#Output message: 
+#Output message:
 #** There are 9204 intensities which are zero or less than 1. These intensities are replaced with 1.
-#Error in dataProcess(PeakAreas, normalization = "equalizeMedians", summaryMethod = "TMP",  : 
+#Error in dataProcess(PeakAreas, normalization = "equalizeMedians", summaryMethod = "TMP",  :
 #                       ** MSstats suspects that there are fractionations and #potentially technical replicates too. Please add Fraction column in the input.
 
 #Add fraction column and have all cells listed as "1" from this google forum post: https://groups.google.com/forum/#!searchin/msstats/fractionations%7Csort:date/msstats/dVh6IEE0xTE/jiokWrNSCgAJ
@@ -62,7 +62,7 @@ QuantData <- dataProcess(PeakAreas)
 # of Peptides/Protein     1-85
 # of Transitions/Peptide   1-5
 
-#** 58 Proteins have only single transition : Consider excluding this protein from the dataset. (CHOYP_BRAFLDRAFT_108193.2.2|m.37878, CHOYP_BRAFLDRAFT_118867.1.1|m.27944, CHOYP_BRAFLDRAFT_120058.1.1|m.9895, CHOYP_BRAFLDRAFT_230143.1.1|m.15015, CHOYP_BRAFLDRAFT_261932.1.1|m.23690, CHOYP_BRAFLDRAFT_275667.1.1|m.17353, CHOYP_BRAFLDRAFT_64737.1.1|m.40499, CHOYP_BRAFLDRAFT_68867.1.1|m.4095, CHOYP_BRAFLDRAFT_72357.1.1|m.59063, CHOYP_BRAFLDRAFT_93126.2.3|m.15451 ...) 
+#** 58 Proteins have only single transition : Consider excluding this protein from the dataset. (CHOYP_BRAFLDRAFT_108193.2.2|m.37878, CHOYP_BRAFLDRAFT_118867.1.1|m.27944, CHOYP_BRAFLDRAFT_120058.1.1|m.9895, CHOYP_BRAFLDRAFT_230143.1.1|m.15015, CHOYP_BRAFLDRAFT_261932.1.1|m.23690, CHOYP_BRAFLDRAFT_275667.1.1|m.17353, CHOYP_BRAFLDRAFT_64737.1.1|m.40499, CHOYP_BRAFLDRAFT_68867.1.1|m.4095, CHOYP_BRAFLDRAFT_72357.1.1|m.59063, CHOYP_BRAFLDRAFT_93126.2.3|m.15451 ...)
 
 #Summary of Samples :
 #                           23C 29C
@@ -80,7 +80,7 @@ head(QuantData$ProcessedData)
 #===============================================================================
 
 # Create dataprocess plots
-dataProcessPlots(data = QuantData, type = "ProfilePlot", width=5, height=5, address = "analyses/")
+dataProcessPlots(data = QuantData, type = "ProfilePlot", width=5, height=5, address = "analyses/MS_stats/")
 #There were 50 or more warnings (use warnings() to see the first 50)
 #Warning messages: (I am showing first 5)
 #1: Removed 195 rows containing missing values (geom_path).
@@ -89,7 +89,7 @@ dataProcessPlots(data = QuantData, type = "ProfilePlot", width=5, height=5, addr
 #4: Removed 744 rows containing missing values (geom_point).
 #5: Removed 99 rows containing missing values (geom_path).
 
-dataProcessPlots(data = QuantData, type = "QCPlot", width=5, height=5, address = "analyses/")
+dataProcessPlots(data = QuantData, type = "QCPlot", width=5, height=5, address = "analyses/MS_stats/")
 #There were 50 or more warnings (use warnings() to see the first 50)
 #Warning messages: (I am showing first 5)
 #1: Removed 541076 rows containing non-finite values (stat_boxplot).
@@ -98,7 +98,7 @@ dataProcessPlots(data = QuantData, type = "QCPlot", width=5, height=5, address =
 #4: Removed 436 rows containing non-finite values (stat_boxplot).
 #5: Removed 252 rows containing non-finite values (stat_boxplot).
 
-dataProcessPlots(data = QuantData, type="Conditionplot", width=5, height=5, address = "analyses/")
+dataProcessPlots(data = QuantData, type="Conditionplot", width=5, height=5, address = "analyses/MS_stats/")
 #There were 50 or more warnings (use warnings() to see the first 50)
 #Warning messages: (I am showing first 5)
 #1: Removed 1 rows containing missing values (geom_hline).
@@ -116,17 +116,17 @@ row.names(comparison) <- "23C-29C"
 print(comparison)
 
 #### GROUP COMPARISON
-testResultOneComparison <- groupComparison(contrast.matrix = comparison, data = QuantData) 
+testResultOneComparison <- groupComparison(contrast.matrix = comparison, data = QuantData)
 testResultOneComparison$ComparisonResult #View results
 proteinComparisonResults <- testResultOneComparison$ComparisonResult #Save as new dataframe
-write.csv(proteinComparisonResults, "analyses/20190403-2015Cgseed-protcomp.csv", col.names = c("Protein", "Label", "log2FC", "SE", "Tvalue", "DF", "pvalue"), row.names = F) #Write out data frame
+write.csv(proteinComparisonResults, "data/20190403-2015Cgseed-protcomp.csv", col.names = c("Protein", "Label", "log2FC", "SE", "Tvalue", "DF", "pvalue"), row.names = F) #Write out data frame
 
 # GROUP COMPARISON PLOTS
 groupComparisonPlots(data = proteinComparisonResults, type = "VolcanoPlot") #Volcano plot, alpha = 0.05.
-#The volcano plot for 23C-29C does not show the protein names because none of them is significant. 
+#The volcano plot for 23C-29C does not show the protein names because none of them is significant.
 groupComparisonPlots(data = proteinComparisonResults, type = "ComparisonPlot") #Comparison plot, alpha = 0.05
-#null device 
-#         1 
+#null device
+#         1
 #There were 18 warnings (use warnings() to see them)
 #Warning messages: (I show first 5)
 #1: Removed 1 rows containing missing values (geom_hline).
@@ -134,4 +134,3 @@ groupComparisonPlots(data = proteinComparisonResults, type = "ComparisonPlot") #
 #3: Removed 1 rows containing missing values (geom_hline).
 #4: Removed 1 rows containing missing values (geom_hline).
 #5: Removed 1 rows containing missing values (geom_hline).
-
